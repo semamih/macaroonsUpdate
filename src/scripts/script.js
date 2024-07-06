@@ -8,7 +8,7 @@ document.querySelectorAll('#menu *').forEach((item) => {
     }
 })
 
-$('#button').on('click', (e) => {
+$('#button').on('click', () => {
     let choiceInput = $("#choiceInput");
     let nameInput = $("#nameInput");
     let phoneInput = $("#phoneInput");
