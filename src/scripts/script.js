@@ -37,21 +37,10 @@ $('#button').on('click', () => {
 
     let loader = $(".loaderDiv");
     if(!hasError){
-        loader.css("display","flex");
-        $.ajax({
-            method: "POST",
-            url: "https://testologia.ru/checkout",
-            data: { product: choiceInput.val(), name: nameInput.val(), phone: phoneInput.val() }
-        })
-            .done(function( msg ) {
-                loader.hide();
-                if(msg.success){
-                    $(".order__info").css('display','none');
-                    $(".thanks").show();
-                }else{
-                    alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
-                }
-            });
+        $(".order__info").css('display','none');
+        $(".thanks").show();
+    }else{
+        alert("Возникла ошибка при оформлении заказа, позвоните нам и сделайте заказ");
     }
 })
 
